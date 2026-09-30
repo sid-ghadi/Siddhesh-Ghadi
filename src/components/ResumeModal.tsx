@@ -24,7 +24,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-[#140205]/85 backdrop-blur-md"
+          className="fixed inset-0 bg-[#040d1a]/85 backdrop-blur-md"
         />
 
         {/* Modal Window */}
@@ -33,13 +33,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 20 }}
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-3xl max-h-[90vh] flex flex-col bg-[#1c0408]/95 border border-[rgba(255,232,188,0.23)] shadow-2xl z-10 overflow-hidden text-[#ffe8bc]"
+          className="relative w-full max-w-3xl max-h-[90vh] flex flex-col bg-[#081a2e] border border-[rgba(147,183,224,0.3)] shadow-2xl z-10 overflow-hidden text-[#e9eef6]"
         >
           {/* Top Control Bar */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-[rgba(255,232,188,0.23)] bg-[#120205]">
-            <div className="flex items-center gap-2.5 font-mono text-xs text-[rgba(255,232,188,0.72)]">
-              <span className="w-2 h-2 rounded-full bg-[#d21d36]" />
-              <span className="font-bold tracking-wider text-[#fff7df] uppercase">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-[rgba(147,183,224,0.22)] bg-[#040d1a]">
+            <div className="flex items-center gap-2.5 font-mono text-xs text-[rgba(233,238,246,0.7)]">
+              <span className="w-2 h-2 rounded-full bg-[#e8963c]" />
+              <span className="font-bold tracking-wider text-[#e9eef6] uppercase">
                 SIDDHESH_GHADI_RESUME.PDF
               </span>
             </div>

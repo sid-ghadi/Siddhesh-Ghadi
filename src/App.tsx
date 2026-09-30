@@ -12,14 +12,11 @@ import { TargetRolesSection } from './components/TargetRolesSection';
 import { SkillsMatrix } from './components/SkillsMatrix';
 import { ProjectsLedgerSection } from './components/ProjectsLedgerSection';
 import { ExperienceSection } from './components/ExperienceSection';
-import { ProofSection } from './components/ProofSection';
 import { EducationSection } from './components/EducationSection';
 import { ContactSection } from './components/ContactSection';
-import { ResumeModal } from './components/ResumeModal';
 
 export default function App() {
   const [bootReady, setBootReady] = useState(false);
-  const [resumeOpen, setResumeOpen] = useState(false);
 
   useEffect(() => {
     // Intersection Observer for scroll-triggered data-reveal animations
@@ -54,12 +51,12 @@ export default function App() {
       <InitializationBoot onComplete={() => setBootReady(true)} />
 
       {/* Floating Top Navigation Header */}
-      <Navigation onOpenResume={() => setResumeOpen(true)} />
+      <Navigation />
 
       {/* Main Portfolio Sections */}
       <main>
         {/* Hero Section */}
-        <Hero onOpenResume={() => setResumeOpen(true)} />
+        <Hero />
 
         {/* About / Target Roles Section */}
         <TargetRolesSection />
@@ -73,18 +70,12 @@ export default function App() {
         {/* Professional Experience Section */}
         <ExperienceSection />
 
-        {/* Certifications / Proof Section */}
-        <ProofSection />
-
-        {/* Education Stack Section */}
+        {/* Education Stack & Certifications Section */}
         <EducationSection />
 
         {/* Contact Panel & Site Footer */}
-        <ContactSection onOpenResume={() => setResumeOpen(true)} />
+        <ContactSection />
       </main>
-
-      {/* Printable & Interactive Curriculum Vitae Modal */}
-      <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
     </>
   );
 }

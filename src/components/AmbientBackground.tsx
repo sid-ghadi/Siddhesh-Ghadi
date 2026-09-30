@@ -5,7 +5,7 @@ export const AmbientBackground: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
 
   useEffect(() => {
-    // Generate fine film grain canvas
+    // Generate fine drafting film grain
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -31,7 +31,7 @@ export const AmbientBackground: React.FC = () => {
         data[i] = val;
         data[i + 1] = val;
         data[i + 2] = val;
-        data[i + 3] = 16; // soft subtle opacity
+        data[i + 3] = 12; // subtle drafting paper texture
       }
       ctx.putImageData(imgData, 0, 0);
     };
@@ -39,7 +39,6 @@ export const AmbientBackground: React.FC = () => {
     drawNoise();
     window.addEventListener('resize', handleResize);
 
-    // Mouse movement for cursor glow
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
@@ -53,17 +52,16 @@ export const AmbientBackground: React.FC = () => {
 
   return (
     <>
+      {/* Corner registration marks — evoke engineering drafting sheet */}
+      <div className="reg-mark reg-tl" aria-hidden="true" />
+      <div className="reg-mark reg-tr" aria-hidden="true" />
+      <div className="reg-mark reg-bl" aria-hidden="true" />
+      <div className="reg-mark reg-br" aria-hidden="true" />
+
       {/* Subtle Grain Canvas */}
       <canvas id="grain-canvas" ref={canvasRef} aria-hidden="true" />
 
-      {/* Architectural Geometric Polygon Layers */}
-      <div className="bg-architecture" aria-hidden="true">
-        <span />
-        <span />
-        <span />
-      </div>
-
-      {/* Interactive Cursor Glow following mouse */}
+      {/* Interactive Amber Cursor Glow following mouse */}
       <div
         className="cursor-glow"
         aria-hidden="true"

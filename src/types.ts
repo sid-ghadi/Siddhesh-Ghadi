@@ -43,6 +43,21 @@ export interface EducationItem {
   secondary?: SecondaryEducation[];
 }
 
+export interface ProjectItem {
+  id: string;
+  rev: string;
+  title: string;
+  scope: string;
+  shortDesc: string;
+  fullDesc: string;
+  tag: string;
+  githubUrl?: string;
+  tools: string[];
+  challenges: string[];
+  architecture?: string[];
+  outcomes?: string[];
+}
+
 export interface ProfileData {
   name: string;
   eyebrow: string;
@@ -60,4 +75,5 @@ export interface ProfileData {
   experiences: ExperienceItem[];
   skillCategories: SkillCategory[];
   certifications: CertificationItem[];
+  projects?: ProjectItem[];
 }
